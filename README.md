@@ -385,6 +385,48 @@
     -   Ver Post
         ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
 
+-   Para que nuestro Blog este alojado en un servidor y se pueda ver desde cualquier dispositivo utilizaremos PythonAnywhere https://www.pythonanywhere.com
+    -   Crear una cuenta
+        ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
+-   Luego Crearemos un token para la api de PythonAnywhere
+    -   Crear nueva API token
+        ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
+-   Configurar nuestro sitio en PythonAnywhere
+    -   Iniciamos una consola Bash
+    -   Instalamos la herramienta que nos va a permitir que PythonAnywhere descargue nuestro código de GitHub
+    ```sh
+    pip3.6 install --user pythonanywhere
+    ```
+    ```sh
+    Successfully installed contextlib2-21.6.0 pythonanywhere-0.10.2 schema-0.7.5 tabulate-0.8.9 typer-0.4.1
+    ```
+    -   Ahora ejecutaremos el asistente para configurar automáticamente nuestra aplicación desde GitHub.
+    ```sh
+    pa_autoconfigure_django.py --python=3.6 https://github.com/JesusFSP/PWEB-Lab05.git
+    ```
+    -   A medida que se ejecuta, podrás ver lo que hace:
+
+        -   Se descarga nuestro código de GitHub.
+        -   Crea un virtualenv en PythonAnywhere, como el de tu propia computadora.
+        -   Actualiza tus ficheros de settings con algunos settings de despliegue.
+        -   Crea la base de datos en PythonAnywhere ejecutando el comando manage.py migrate.
+        -   Configura los archivos estáticos (static).
+        -   Y configura PythonAnywhere para publicar nuestra aplicación web a través de su API.
+    ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
+    -   Luego tenemos que crear la cuenta de administrador
+    ```sh
+    (jesusfsp.pythonanywhere.com) 20:14 ~/jesusfsp.pythonanywhere.com (main)$ python manage.py createsuperuser
+    ```
+    ```sh
+    Username (leave blank to use 'jesusfsp'): jesusfsp
+    Email address: jsilva@unsa.edu.pe
+    Password: 
+    Password (again): 
+    Superuser created successfully.
+    ```
+
+
+
 
 #
 

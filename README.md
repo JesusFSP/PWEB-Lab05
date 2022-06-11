@@ -66,188 +66,355 @@
 
 #
 
-## SOLUCIÓN Y RESULTADOS
+# SOLUCIÓN Y RESULTADOS
 
-### OBJETIVOS
-
-- Realizar ejercicios en temas de Estructuras de datos, Pilas, Colas.
-
-### TEMAS
-- Pilas
-- Colas
-
-<details>
-<summary>COMPETENCIAS</summary>
-
-- C.m. Construye responsablemente soluciones haciendo uso de estructuras de datos y algoritmos, siguiendo un proceso adecuado para resolver problemas computacionales que se ajustan al uso de los recursos disponibles y a especificaciones concretas.
-
-</details>
-
-## CONTENIDO DE LA GUÍA
-
-### MARCO CONCEPTUAL
-
--   Introducción
-    -   Diseño de algoritmos. 
-    -   Diseño de estructuras de datos adecuadas.
-    -   Algunas estructuras y algoritmos son más eficientes que otros para la misma tarea. 
-    -   Nos concentraremos en algunas tareas básicas: Almacenamiento, Clasificación y Búsqueda de datos.
-    -   Técnicas se aplican de manera general.
-
--   Algoritmos
-    -   Algoritmo ~ Secuencia finita de instrucciones.
-    -   Cada instrucción tiene un significado claro.
-    -   Cantidad finita de esfuerzo.
-    -   Período de tiempo finito.
-    -   Si se va ejecutar por una computadora: lenguaje formal riguroso (inflexibles).
-    -   Pseudocódigo: C y Java.
-
--   Estructuras de datos, tipos de datos abstractos
-    -   (Casi siempre) Formular un algoritmo eficiente depende de poder organizar los datos de manera adecuada. 
-    -   Estructura de datos ~ Forma particular de organizar los datos para tipos particulares de operaciones.
-    -   Detalles: implementación en lenguajes de programación particulares o almacenamiento en memoria. 
-    -   Modelos matemáticos abstractos de clases particulares de estructuras de datos o tipos de datos que tienen características comunes. 
-    -   Tipos de datos abstractos y sus operaciones que se pueden realizar en ellos.
-    -   (Por lo general) A partir de tipos de datos más primitivos (Ejemplo: enteros o cadenas). Extraer esos datos de ellos.
-    -   Controlar el flujo de procesamiento en los algoritmos. 
-    -   Encapsulación: Los detalles de implementación están ocultos para el usuario y protegidos del acceso externo.
-
--   Pilas
-    -   (Nivel abstracto) Equivalentes a las listas enlazadas. 
-    -   Son la estructura de datos ideal para modelar una estrategia de búsqueda First-In-Last-Out (FILO) o Last-In-First-Out (LIFO).
-    -   Representación grafica:
-        -   Similiar a una lista enlazada.
-        -   Hay que tener cuidado con el orden de los elementos. 
-        -   Ejemplo, la pila creada al insertar los números [3; 1; 4; 2; 5] en ese orden se representaría como:
-        ![Pila](imagenes/pila.png)
-
--   Tipo de datos abstractos "Pila"
-    -   Los operadores primitivos para las pilas suelen recibir nombres diferentes. 
-    -   Los dos constructores son:
-        -   EmptyStack  //Constructor de pilas vacías.
-        -   push(element, stack)    //Toma un elemento y lo empuja encima de una pila existente.,
-    -   Los dos selectores son:
-        -   top(stack)  //Devuelve el elemento superior de una pila
-        -   pop(stack)  //Devuelve la pila sin el elemento superior.
-
--   Implementación de Pilas
-    -   Enfoque funcional: Empujar no cambia la pila original. Crea una nueva pila a partir de la pila original y un nuevo elemento. 
-    -   Muchas pilas nuevas en un programa: Administración de memoria. 
-    -   Una sola pila que se cambia de forma destructiva. Después de aplicar push, la pila original ya no salga, sino que se transforma en una nueva pila con un elemento adicional. -  -   Aplicar top a una pila dada puede dar diferentes respuestas.
-
--   Colas
-    -   Estructura de datos utilizada para modelar una estrategia de primero en entrar, primero en salir (FIFO).
-    -   Agregamos al final de una cola y quitamos elementos de su frente.
-    -   Representación grafica:
-        -   Similar a una lista o pila, pero con dos nodos adicionales.
-        -   El primer elemento apunta al principio de la lista de todos los elementos de la cola.
-        -   El segundo elemento apunta al último elemento de la lista. 
-        -   Ejemplo, si insertamos los elementos [3; 1; 4; 2] en una cola inicialmente vacía, obtenemos:
-        ![Cola](imagenes/cola.png)
-        -   Tomar el primer elemento de la cola o agregar un elemento al final de la cola se puede hacer de manera eficiente. Esfuerzo constante independientemente de la longitud de la cola.
-    
--   Tipos de datos abstractos "Cola"
-    -   Una cola contiene los siguientes métodos:
-        -   push(element, queue)  //Toma un elemento y una cola y devuelve una cola en la que el elemento se agrega a la cola original al final.
-        -   top()   //Da el elemento superior de una cola, es decir, 3 en el ejemplo.
-        -   pop(queue)  //Da la cola sin el elemento superior.
-        -   isEmpty()
-       
 ## EJERCICIOS PROPUESTOS
+-   Crea un blog sencillo en un entorno virtual utilizando la guía: https://tutorial.djangogirls.org/es/django_start_project/
+-   Especificar paso a paso la creación del blog en su informe.
+-   Crear un video tutorial donde realice las operaciones CRUD (URL public reproducible online)
+-   Adjuntar URL del video en el informe.
 
-1. Pilas iguales (6 puntos)
-    -   Tiene tres pilas de cilindros donde cada cilindro tiene el mismo diámetro, pero pueden variar en altura. Puede cambiar la altura de una pila quitando y descartando su cilindro superior tantas veces como desee.
-    -   Encuentre la altura máxima posible de las pilas de modo que todas las pilas tengan exactamente la misma altura. 
-    -   Esto significa que debe eliminar cero o más cilindros de la parte superior de cero o más de las tres pilas hasta que tengan la misma altura y luego devolver la altura.
+### Creando el Blog Personal
+-   Crea el directorio para trabajar Django dentro de un entorno virtual:
+    ```sh
+    mkdir django_env
+    ```
+    ```sh
+    tree .
+    ```
+    ```sh
+    .
+    ├── django_env
+    └── README.md
+    1 directory, 1 file
+    ```
 
-    -   Ejemplo:
-        -   Dado h1 = [1,2,1,1], h2 = [1,1,2] y h3 = [1,1]. 
-        -   Hay cilindros en las tres pilas, con sus alturas en las tres matrices.
-        -   Retire los 2 cilindros superiores de h1 (alturas = [1, 2]) y de h2 (alturas = [1, 1])para que las tres pilas tengan 2 unidades de altura. 
-        -   Devuelve 2 como respuesta. 
-        -   Nota: una pila vacía sigue siendo una pila.
-    
-    -   Complete la función equalStacks. equalStacks tiene los siguientes parámetros:
-        -   int h1[n1]: el primer arreglo de alturas
-        -   int h2[n2]: el segundo arreglo de alturas
-        -   int h3[n3]: el tercer arreglo de alturas
-    
-    -   Retorno
-        -   int: la altura de las pilas cuando se igualan
-    
-    -   Explicación ilustrativa
-        -   Dadas 3 pilas: h1 = [1,1,1,2,3], h2 = [2,3,4] y h3 = [1,4,1,1]. Se ven así:
-        -   ![Cilindros](imagenes/cilindros01.png)
+-   Crear el entorno virtual dentro del directorio creado:
+    ```sh
+    cd django_env
+    virtualenv -p python3 env
+    ```
+    ```sh
+    created virtual environment CPython3.9.2.final.0-64 in 3932ms
+    creator CPython3Posix(dest=/.../env, clear=False, no_vcs_ignore=False, global=False)
+    seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/.../.local/share/virtualenv)
+    added seed packages: pip==22.0.4, setuptools==62.1.0, wheel==0.37.1
+    activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+    ```
 
-        -   Para igualar sus alturas, retire el primer cilindro de las pilas y dos cilindros de la pila, y luego quitar la parte superior(como se muestra a continuación).
+    ```sh
+    tree -L 4 ../
+    ```
+    ```sh
+    ../
+    ├── django_env
+    │   └── env
+    │       ├── bin
+    │       │   ├── activate
+    │       │   ├── activate.csh
+    │       │   ├── activate.fish
+    │       │   ├── activate.nu
+    │       │   ├── activate.ps1
+    │       │   ├── activate_this.py
+    │       │   ├── deactivate.nu
+    │       │   ├── pip
+    │       │   ├── pip3
+    │       │   ├── pip-3.9
+    │       │   ├── pip3.9
+    │       │   ├── python -> /usr/bin/python3
+    │       │   ├── python3 -> python
+    │       │   ├── python3.9 -> python
+    │       │   ├── wheel
+    │       │   ├── wheel3
+    │       │   ├── wheel-3.9
+    │       │   └── wheel3.9
+    │       ├── lib
+    │       │   └── python3.9
+    │       └── pyvenv.cfg
+    └── README.md
+    ```
 
-        -   ![Cilindros](imagenes/cilindros02.png)
-        -   Las alturas de pila se reducen de la siguiente manera:
-            -   8 − 3 = 5
-            -   9 − 4 = 5
-            -   7 − 1 − 1 = 5
-            -   Las tres pilas ahora tienen altura = 5, el valor a devolver.
+-   Comprobemos que estemos en el directorio ```django_env```:
+    ```sh
+    pwd
+    jesus@Silva:~/Escritorio/.../django_env$
+    ```
 
-2.  Pilas (6 puntos)
-    -   Implementa una pila usando POO con tipos genéricos siguiendo los estándares de Java (los métodos para una pila) verifique: 
-    -   https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html
+-   Activamos el entorno virtual:
+    ```sh
+    source env/bin/activate
+    ```
+
+-   Listamos los paquetes instalados
+    ```sh
+    pip list
+    ```
+    ```sh
+    Package    Version
+    ---------- -------
+    pip        22.0.4
+    setuptools 62.1.0
+    wheel      0.37.1
+    WARNING: You are using pip version 22.0.4; however, version 22.1.2 is available.
+    You should consider upgrading via the '/home/.../django_env/env/bin/python -m pip install --upgrade pip' command.
+    ```
+
+-   Dentro del entorno virtual. Crearemos un proyecto Django que se llame ```Blog```
+    ```sh
+    django-admin startproject Blog
+    ```
+    ```sh
+    tree Blog
+    ```
+    ```sh
+    Blog
+    ├── manage.py
+    └── Blog
+        ├── asgi.py
+        ├── __init__.py
+        ├── settings.py
+        ├── urls.py
+        └── wsgi.py
+    ```
+
+-   Ingresar al directorio ```.../django_env/Blog``` y alli crear un directorio llamado ```Apps``` para alojar alli a las aplicaciones.
+    ```sh
+    mkdir Apps
+    cd Apps
+    django-admin startapp Aplicacion1
+    ```
+    ```sh
+    tree ../
+    ```
+    ```sh
+    ../
+    ├── Apps
+    │   └── Aplicacion1
+    │       ├── admin.py
+    │       ├── apps.py
+    │       ├── __init__.py
+    │       ├── migrations
+    │       │   └── __init__.py
+    │       ├── models.py
+    │       ├── tests.py
+    │       └── views.py
+    ├── manage.py
+    └── Blog
+        ├── asgi.py
+        ├── __init__.py
+        ├── settings.py
+        ├── urls.py
+        └── wsgi.py
+    ```
+
+-   Crearemos nuestro primer modelo editando el archivo ```models.py```
+    ```sh
+    vim models.py
+    ```
+    ```sh
+        from django.conf import settings
+        from django.db import models
+        from django.utils import timezone
 
 
+        class Post(models.Model):
+            author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+            title = models.CharField(max_length=200)
+            text = models.TextField()
+            created_date = models.DateTimeField(
+                default=timezone.now)
+            published_date = models.DateTimeField(
+                blank=True, null=True)
 
-3.  Colas (6 puntos)
-    -   Implementa una cola usando POO con tipos genéricos siguiendo los estándares de Java (los métodos para una cola) verifique:
-    -   https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html
+        def publish(self):
+            self.published_date = timezone.now()
+            self.save()
 
+        def __str__(self):
+            return self.title
+    ```
 
-#
-¿Cómo empezar? 
+-   Registrar el modelo dentro de ```admin.py```
+    ```sh
+    vim admin.py
+    ```
+    ```sh
+    from django.contrib import admin
+    from .models import Post
+    # Register your models here.
+    admin.site.register(Post)
+    ```
 
-*  Implemente una clase Node<T> donde T es un tipo genérico, esta clase debe contener al menos dos propiedades. 
-*   Para obtener más información sobre la verificación genérica: https://docs.oracle.com/javase/tutorial/java/generics/types.html
+-   Añadir la aplicación como una aplicación instalada en el archivo ```Blog/settings.py```
+    ```sh
+    vim settings.py
+    ```
+    ```sh
+    #...
+    # Application definition
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'Apps.Aplicacion1'
+    ]
+    #...
+    ```
+-   ```Si estas trabajando en entornos virtuales es muy probable que no reconozca la ruta de la aplicación. Así que debemos editar el archivo apps.py de la aplicación```
+    ```sh
+    vim apps.py
+    ```
+    ```sh
+    from django.apps import AppConfig
+    class Aplicacion1Config(AppConfig):
+        default_auto_field = 'django.db.models.BigAutoField'
+        name = 'Apps.Aplicacion1'
+    ```
 
-    1. Datos T: la información almacenada en el nodo.
-    2. Node<T> nextNode: una referencia al siguiente nodo.
+-   Ingresar al directorio ```.../django_env/Blog``` donde se encuentra el archivo ```manage.py``` para realizar la primera migración:
+    ```sh
+    python manage.py migrate
+    ```
+    ```sh
+    Operations to perform:
+    Apply all migrations: admin, auth, contenttypes, sessions
+    Running migrations:
+    Applying contenttypes.0001_initial... OK
+    Applying auth.0001_initial... OK
+    Applying admin.0001_initial... OK
+    Applying admin.0002_logentry_remove_auto_add... OK
+    Applying admin.0003_logentry_add_action_flag_choices... OK
+    Applying contenttypes.0002_remove_content_type_name... OK
+    Applying auth.0002_alter_permission_name_max_length... OK
+    Applying auth.0003_alter_user_email_max_length... OK
+    Applying auth.0004_alter_user_username_opts... OK
+    Applying auth.0005_alter_user_last_login_null... OK
+    Applying auth.0006_require_contenttypes_0002... OK
+    Applying auth.0007_alter_validators_add_error_messages... OK
+    Applying auth.0008_alter_user_username_max_length... OK
+    Applying auth.0009_alter_user_last_name_max_length... OK
+    Applying auth.0010_alter_group_name_max_length... OK
+    Applying auth.0011_update_proxy_permissions... OK
+    Applying auth.0012_alter_user_first_name_max_length... OK
+    Applying sessions.0001_initial... OK
+    ```
+    -   Podemos observar que la base de datos por defecto ```db.sqlite3``` se ha creado con las tablas iniciales
+    ```sh
+    tree -L 3 ../
+    ```
+    ```
+    ../
+    ├── env
+    └── Proyecto
+        ├── Apps
+        │   └── Aplicacion1
+        ├── db.sqlite3
+        ├── manage.py
+        └── Proyecto
+            ├── asgi.py
+            ├── __init__.py
+            ├── __pycache__
+            ├── settings.py
+            ├── urls.py
+            └── wsgi.py
+    ```
 
-*   Implementar las clases Stack<T> y Queue<T> deberían contener al menos esta propiedad
-    1. Node<T> root: la referencia sobre el nodo inicial
+-   Crear el super usuario para poder ingresar al panel de administración:
+    ```sh
+    python manage.py createsuperuser
+    ```
+    ```sh
+    Username (leave blank to use 'jesus'): jesusfsp
+    Email address: jsilva@unsa.edu.pe
+    Password: 
+    Password (again): 
+    Superuser created successfully.
+    ```
+
+-   Crear las migraciones. La migración inicial creará el modelo Video.
+    ```sh
+    python manage.py makemigrations
+    ```
+    ```sh
+    Migrations for 'Aplicacion1':
+    Apps/Aplicacion1/migrations/0001_initial.py
+        - Create model Post
+    ```
+-   Realizar una nueva migración para que los cambios se efectuen.
+     ```sh
+    python manage.py migrate
+    ```
+    ```sh
+    Operations to perform:
+    Apply all migrations: Aplicacion1, admin, auth, contenttypes, sessions
+    Running migrations:
+    Applying Aplicacion1.0001_initial... OK
+    ```
+-   Ejecutar el servidor
+    ```sh
+    python manage.py runserver
+    ```
+    ```sh
+    Watching for file changes with StatReloader
+    Performing system checks...
+    System check identified no issues (0 silenced).
+    June 02, 2022 - 14:50:11
+    Django version 4.0.5, using settings 'Blog.settings'
+    Starting development server at http://127.0.0.1:8000/
+    Quit the server with CONTROL-C.
+    ```
+
+-   Acceder al Panel de  administración desde el navegador web a : http://127.0.0.1:8000/admin
+
+    -   Inicio de sesión
+
+        ![DJANGO-PANEL-ADMIN-LOGIN](imagenes/django_admin_01.png)
+
+    -   Portada inicial
+        ![DJANGO-PANEL-ADMIN-HOME](imagenes/django_admin_02.png)
+
+    -   Agregando un nuevo video
+        ![DJANGO-PANEL-ADMIN-ADD-01](imagenes/django_admin_03.png)
+
+    -   Video agregado satisfactoriamente
+        ![DJANGO-PANEL-ADMIN-ADD-02](imagenes/django_admin_04.png)
+
+    -   Ver video
+        ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
+
 
 #
 
 ## CUESTIONARIO
-- ¿Qué similitudes hay entre una Lista Enlazada y una Pila? ( 1 pt)
-- ¿En que casos seria favorable/desfavorable utilizar Pila/Cola?  ( 1 pt)
+-   ¿Cuál es un estándar de codificación para Python? Ejemplo: Para PHP en el proyecto Pear https://pear.php.net/manual/en/standards.php
+-   ¿Qué diferencias existen entre EasyInstall, pip, y PyPM?
+-   En un proyecto Django que se debe ignorar para usar git. Vea: https://github.com/django/django/blob/main/.gitignore. ¿Qué otros tipos de archivos se deberían agregar a este archivo?
+-   Utilice ```python manage.py shell``` para agregar objetos. ¿Qué archivos se modificaron al agregar más objetos?
+
+#
+## CONCLUSIONES
+
+#
+## RETROALIMENTACIÓN GENERAL
 
 #
 
-## REFERENCIAS
-    - https://www.w3schools.com/java/
-    - https://www.eclipse.org/downloads/packages/release/2022-03/r/eclipse-ide-enterprise-java-and-web-developers
-    - https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html
-    - https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html
+## REFERENCIAS Y BIBLIOGRAFÍA
+-   https://www.w3schools.com/python/python_reference.asp
+-   https://docs.python.org/3/tutorial/
+-   https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Models
+-   https://tutorial.djangogirls.org/es/django_models/
+-   https://pear.php.net/manual/en/standards.php
+-   https://docs.djangoproject.com/en/4.0/
+-   https://www.youtube.com/watch?v=M4NIs4BM1dk
+-   https://pypi.org/
+-   https://pip.pypa.io/en/latest/user_guide/
+-   https://packaging.python.org/en/latest/tutorials/installing-packages/
+
 #
-
-[license]: https://img.shields.io/github/license/rescobedoq/pw2?label=rescobedoq
-[license-file]: https://github.com/rescobedoq/pw2/blob/main/LICENSE
-
-[downloads]: https://img.shields.io/github/downloads/rescobedoq/pw2/total?label=Downloads
-[releases]: https://github.com/rescobedoq/pw2/releases/
-
-[last-commit]: https://img.shields.io/github/last-commit/rescobedoq/pw2?label=Last%20Commit
-
-[Debian]: https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white
-[debian-site]: https://www.debian.org/index.es.html
-
-[Git]: https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white
-[git-site]: https://git-scm.com/
-
-[GitHub]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
-[github-site]: https://github.com/
-
-[Vim]: https://img.shields.io/badge/VIM-%2311AB00.svg?style=for-the-badge&logo=vim&logoColor=white
-[vim-site]: https://www.vim.org/
-
-[Java]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white
-[java-site]: https://docs.oracle.com/javase/tutorial/
 
 
 [![Debian][Debian]][debian-site]

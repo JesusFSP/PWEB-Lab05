@@ -308,12 +308,12 @@
     ```
     ../
     ├── env
-    └── Proyecto
+    └── Blog
         ├── Apps
         │   └── Aplicacion1
         ├── db.sqlite3
         ├── manage.py
-        └── Proyecto
+        └── Blog
             ├── asgi.py
             ├── __init__.py
             ├── __pycache__
@@ -376,13 +376,13 @@
     -   Portada inicial
         ![DJANGO-PANEL-ADMIN-HOME](imagenes/django_admin_02.png)
 
-    -   Agregando un nuevo video
+    -   Agregando un nuevo Post
         ![DJANGO-PANEL-ADMIN-ADD-01](imagenes/django_admin_03.png)
 
-    -   Video agregado satisfactoriamente
+    -   Post agregado satisfactoriamente
         ![DJANGO-PANEL-ADMIN-ADD-02](imagenes/django_admin_04.png)
 
-    -   Ver video
+    -   Ver Post
         ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
 
 

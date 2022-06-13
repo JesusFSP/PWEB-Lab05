@@ -30,9 +30,9 @@
 </theader>
 <tbody>
 <tr><td>ASIGNATURA:</td><td colspan="5">Programación Web 2</td></tr>
-<tr><td>TÍTULO DE LA PRÁCTICA:</td><td colspan="5">Pilas y Colas</td></tr>
+<tr><td>TÍTULO DE LA PRÁCTICA:</td><td colspan="5">	Django</td></tr>
 <tr>
-<td>NÚMERO DE PRÁCTICA:</td><td>03</td><td>AÑO LECTIVO:</td><td>2022 A</td><td>NRO. SEMESTRE:</td><td>III</td>
+<td>NÚMERO DE PRÁCTICA:</td><td>05</td><td>AÑO LECTIVO:</td><td>2022 A</td><td>NRO. SEMESTRE:</td><td>III</td>
 </tr>
 <tr>
 <td>FECHA INICIO:</td><td>12-Jun-2022</td><td>HORA DE PRESENTACION:</td><td>23:55</td>
@@ -301,26 +301,7 @@
     Applying auth.0012_alter_user_first_name_max_length... OK
     Applying sessions.0001_initial... OK
     ```
-    -   Podemos observar que la base de datos por defecto ```db.sqlite3``` se ha creado con las tablas iniciales
-    ```sh
-    tree -L 3 ../
-    ```
-    ```
-    ../
-    ├── env
-    └── Blog
-        ├── Apps
-        │   └── Aplicacion1
-        ├── db.sqlite3
-        ├── manage.py
-        └── Blog
-            ├── asgi.py
-            ├── __init__.py
-            ├── __pycache__
-            ├── settings.py
-            ├── urls.py
-            └── wsgi.py
-    ```
+    
 
 -   Crear el super usuario para poder ingresar al panel de administración:
     ```sh
@@ -387,10 +368,10 @@
 
 -   Para que nuestro Blog este alojado en un servidor y se pueda ver desde cualquier dispositivo utilizaremos PythonAnywhere https://www.pythonanywhere.com
     -   Crear una cuenta
-        ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
+        ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_06.png)
 -   Luego Crearemos un token para la api de PythonAnywhere
     -   Crear nueva API token
-        ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
+        ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_07.png)
 -   Configurar nuestro sitio en PythonAnywhere
     -   Iniciamos una consola Bash
     -   Instalamos la herramienta que nos va a permitir que PythonAnywhere descargue nuestro código de GitHub
@@ -412,7 +393,7 @@
         -   Crea la base de datos en PythonAnywhere ejecutando el comando manage.py migrate.
         -   Configura los archivos estáticos (static).
         -   Y configura PythonAnywhere para publicar nuestra aplicación web a través de su API.
-    ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_05.png)
+    ![DJANGO-PANEL-ADMIN-VIEW](imagenes/django_admin_08.png)
     -   Luego tenemos que crear la cuenta de administrador
     ```sh
     (jesusfsp.pythonanywhere.com) 20:14 ~/jesusfsp.pythonanywhere.com (main)$ python manage.py createsuperuser
